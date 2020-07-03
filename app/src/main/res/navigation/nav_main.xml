@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/newsFragment">
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="id.midnightminer.newstech.ui.news.NewsFragment"
+        android:label="NewsFragment" >
+        <action
+            android:id="@+id/newsToDetail"
+            app:destination="@id/newsDetailFragment" />
+        <action
+            android:id="@+id/errorNetwork"
+            app:destination="@id/errorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="id.midnightminer.newstech.ui.newsDetail.NewsDetailFragment"
+        android:label="fragment_news_detail"
+        tools:layout="@layout/fragment_news_detail" >
+        <action
+            android:id="@+id/detailToError"
+            app:destination="@id/errorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/errorFragment"
+        android:name="id.midnightminer.newstech.ui.error.ErrorFragment"
+        android:label="ErrorFragment" />
+</navigation>
